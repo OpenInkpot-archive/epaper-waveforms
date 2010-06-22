@@ -1,0 +1,32 @@
+#!/usr/bin/make -f
+
+clean:
+	dh_testdir
+	dh_testroot
+	dh_clean
+
+build:
+
+install: build
+	dh_testdir
+	dh_testroot
+	dh_prep
+
+	$(MAKE) install DESTDIR=$(CURDIR)/debian/epaper-waveforms
+
+binary-arch:
+
+binary-indep: install
+	dh_testdir
+	dh_testroot
+
+	dh_link -i
+	dh_compress -i
+	dh_fixperms -i
+	dh_installdeb -i
+	dh_gencontrol -i
+	dh_builddeb -i
+
+binary: binary-indep binary-arch
+
+.PHONY: configure clean build install binary-arch binary

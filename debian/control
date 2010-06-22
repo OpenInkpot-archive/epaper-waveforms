@@ -1,0 +1,18 @@
+Source: epaper-waveforms
+Section: host/tools
+Maintainer: Mikhail Gusarov <dottedmag@dottedmag.net>
+Build-Depends: debhelper (>= 7)
+Priority: optional
+Standards-Version: 3.8.0
+
+Package: epaper-waveforms
+Priority: optional
+Architecture: all
+Depends: ${shlibs:Depends}
+Description: ePaper waveform files
+ This package provides pristine waveform files for different ePaper screens and
+ controllers for further embedding in kernels, bootloaders or image files.
+ .
+ waveform files are the configuration data necessary for ePaper controllers to
+ properly operate ePaper screens in different conditions, such as changing
+ temperature and to perform different types of screen refreshes.
